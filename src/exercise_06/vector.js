@@ -12,5 +12,26 @@ export default class Vector {
   // * Please do NOT modify the signature of the class. Please put all your code in the Vector
   // class.
 
-  // PLEASE DELETE THIS LINE AND ADD YOUR IMPLEMENTATION HERE
+  constructor(x, y){
+    Object.defineProperty(this,'x',{
+      value: x,
+      writable: false
+    });
+    Object.defineProperty(this,'y',{
+      value: y,
+      writable: false
+    });
+  }
+
+  static plus(vector1, vector2) {
+    return new Vector((vector1.x+vector2.x), (vector1.y+vector2.y));
+  }
+
+  static minus(vector1, vector2) {
+    return new Vector((vector1.x-vector2.x), (vector1.y-vector2.y));
+  }
+
+  distance(vector) {
+    return Math.sqrt(Math.pow(this.x,2)+Math.pow(this.y,2));
+  }
 }
