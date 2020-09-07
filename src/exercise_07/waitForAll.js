@@ -27,9 +27,7 @@ export default function waitForAll(...promises) {
         }else if (i == promises.length - 1 && num != promises.length) {
           reject();
         }
-      }).catch(() => {
-        num--;
-      });
+      },()=>{});
     }
   });
 }
